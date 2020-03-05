@@ -21,7 +21,7 @@
   "bugs": {
     "url": "https://github.com/ToryTechs/website/issues"
   },
-  "homepage": "https://github.com/ToryTechs/website#readme"
+  "homepage": "https://github.com/ToryTechs/website#readme",
   "devDependencies": {
     "@testing-library/cypress": "^5.3.0",
     "axe-core": "^3.5.1",
