@@ -1,0 +1,30 @@
+{
+  "name": "torytechs",
+  "version": "1.0.0",
+  "description": "A community of politically conservative makers and problem solvers",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server",
+    "cy:open": "cypress open",
+    "cy:run": "npx cypress run",
+    "test:cypress": "npx start-server-and-test start http://localhost:8080 cy:open",
+    "test:headless": "BROWSER=none npx start-server-and-test start http://localhost:8080 cy:run",
+    "docker:security": "docker run --rm -e SCAN_URL=\"http://192.168.0.12:8080\" lirantal/is-website-vulnerable:latest",
+    "test:security": "npx start-server-and-test start http://localhost:8080 docker:security"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ToryTechs/website.git"
+  },
+  "author": "ToryTechs",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ToryTechs/website/issues"
+  },
+  "homepage": "https://github.com/ToryTechs/website#readme"
+  "devDependencies": {
+    "@testing-library/cypress": "^5.3.0",
+    "axe-core": "^3.5.1",
+    "cypress-axe": "^0.5.3"
+  }
+}
