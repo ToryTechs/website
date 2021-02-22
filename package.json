@@ -9,7 +9,7 @@
     "cy:run": "npx cypress run",
     "test:cypress": "npx start-server-and-test start http://localhost:8080 cy:open",
     "test:headless": "BROWSER=none npx start-server-and-test start http://localhost:8080 cy:run",
-    "docker:security": "docker run --rm -e SCAN_URL=\"http://192.168.0.12:8080\" lirantal/is-website-vulnerable:latest",
+    "docker:security": "docker run --rm -e SCAN_URL=\"http://$(ip -4 addr show docker0 | grep -Po 'inet \\K[\\d.]+'):8080\" lirantal/is-website-vulnerable:latest",
     "test:security": "npx start-server-and-test start http://localhost:8080 docker:security"
   },
   "repository": {
@@ -21,7 +21,7 @@
   "bugs": {
     "url": "https://github.com/ToryTechs/website/issues"
   },
-  "homepage": "https://github.com/ToryTechs/website#readme"
+  "homepage": "https://github.com/ToryTechs/website#readme",
   "devDependencies": {
     "@testing-library/cypress": "^5.3.0",
     "axe-core": "^3.5.1",
